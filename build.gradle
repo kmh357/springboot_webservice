@@ -1,5 +1,6 @@
 buildscript {
     ext {
+        //전역변수 설정
         springBootVersion = '2.1.7.RELEASE'
     }
     repositories {
@@ -16,18 +17,22 @@ buildscript {
 apply plugin : 'java'
 apply plugin : 'eclipse'
 apply plugin : 'org.springframework.boot'
+// spring boot의 의존성들을 관리해주는 플러그인! 꼭 추가해야한다.
 apply plugin : 'io.spring.dependency-management'
 
-group 'org.example.webservice'
+group 'com.example.webservice'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
-targetCompatibility = 1.8
+//targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    annotationProcessor("org.projectlombok:lombok")
+    compileOnly('org.projectlombok:lombok')
 }
