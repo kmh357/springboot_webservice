@@ -16,6 +16,7 @@ buildscript {
 
 apply plugin : 'java'
 apply plugin : 'eclipse'
+apply plugin : 'idea'
 apply plugin : 'org.springframework.boot'
 // spring boot의 의존성들을 관리해주는 플러그인! 꼭 추가해야한다.
 apply plugin : 'io.spring.dependency-management'
@@ -32,7 +33,10 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
     annotationProcessor("org.projectlombok:lombok")
     compileOnly('org.projectlombok:lombok')
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    runtime("com.h2database:h2")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
