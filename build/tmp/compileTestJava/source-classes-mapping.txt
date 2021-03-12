@@ -6,3 +6,5 @@ com/example/webservice/springboot/web/HelloControllerTest.java
  com.example.webservice.springboot.web.HelloControllerTest
 com/example/webservice/springboot/web/PostsApiControllerTest.java
  com.example.webservice.springboot.web.PostsApiControllerTest
+com/example/webservice/springboot/web/IndexControllerTest.java
+ com.example.webservice.springboot.web.IndexControllerTest
